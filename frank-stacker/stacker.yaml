@@ -4,6 +4,7 @@
 
 namespace: ${namespace}
 
+
 mappings:
   AmiMap:
     us-east-1:
