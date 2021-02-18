@@ -2,7 +2,7 @@
 # http://stacker.readthedocs.io/en/latest/config.html
 # 
 
-namespace: ${dev}
+namespace: ${namespace}
 
 mappings:
   AmiMap:
