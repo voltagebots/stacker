@@ -1,8 +1,7 @@
 # this is an minimal `stack config` file.
 # http://stacker.readthedocs.io/en/latest/config.html
 # 
-# The stacker namespace, provided by the environment file.
-# http://stacker.readthedocs.io/en/latest/config.html#namespace-delimiter
+
 namespace: ${namespace}
 
 mappings:
@@ -33,11 +32,8 @@ stacks:
   # The 'name' and 'class_path' keys are required.
   # The 'name' value must be unique.
   # The 'class_path' points at a Python stacker "blueprint" class.
-  - name: touch-nothing
+  - name: ASG
     class_path: blueprints.touch.AutoscalingGroup
-
-    # in this case, if you look in the "blueprints" directory at the file "touch.py"
-    # you will see a Python class called "Touch".
 
     # when we execute stacker with this `stack config`, it will automatically run the
     # blueprint code to produce a CloudFormation JSON template, upload it to s3, and
