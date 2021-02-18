@@ -22,7 +22,7 @@ from stacker.blueprints.variables.types import (
 
 CLUSTER_SG_NAME = "%sSG"
 ELB_SG_NAME = "%sElbSG"
-ELB_NAME = "%sDev-ELB"
+ELB_NAME = "%sDevELB"
 
 
 class AutoscalingGroup(Blueprint):
@@ -37,16 +37,13 @@ class AutoscalingGroup(Blueprint):
             'description': 'Base domain for the stack.'},
         'PrivateSubnets': {'type': EC2SubnetIdList,
                            'description': 'Subnets to deploy private '
-                                          'instances in.',
-                           'default': ['10.0.3.0/24', '10.0.2.0/24', '10.0.1.0/24']},
+                                          'instances in.'},
         'PublicSubnets': {'type': EC2SubnetIdList,
                           'description': 'Subnets to deploy public (elb) '
-                                         'instances in.',
-                          'default': ['10.0.101.0/24', '10.0.102.0/24']},
+                                         'instances in.'},
         'AvailabilityZones': {'type': CFNCommaDelimitedList,
                               'description': 'Availability Zones to deploy '
-                                             'instances in.',
-                              'default': ['us-west-1c', 'us-west-1b']},
+                                             'instances in.'},
         'InstanceType': {'type': CFNString,
                          'description': 'EC2 Instance Type',
                          'default': 't2.micro'},

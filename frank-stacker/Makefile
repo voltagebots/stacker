@@ -1,4 +1,4 @@
-REGION=us-east-1
+REGION=us-west-1
 
 
 POETRY := $(shell command -v poetry 2> /dev/null)
