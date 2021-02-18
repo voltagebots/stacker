@@ -38,7 +38,7 @@ stacks:
     variables:
       ImageName: ubuntu1404
       SshKeyName: default
-      AZCount: 2
+      AvailabilityZones: 2
       PublicSubnets:
         - 10.0.101.0/24
         - 10.0.102.0/24
