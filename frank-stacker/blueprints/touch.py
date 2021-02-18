@@ -27,10 +27,10 @@ ELB_NAME = "%sDev-ELB"
 
 class AutoscalingGroup(Blueprint):
     VARIABLES = {
-        'VpcId': {'type': EC2VPCId, 'description': 'Vpc Id', 'default': "vpc-test"},
+        'VpcId': {'type': EC2VPCId, 'description': 'Vpc Id', 'default': "vpc-005de29611bb00830"},
         'DefaultSG': {'type': EC2SecurityGroupId,
                       'description': 'Top level security group.',
-                      'default': 'sg-3245'},
+                      'default': 'sg-0c70ce885e7ba5f3b'},
         'BaseDomain': {
             'type': CFNString,
             'default': '',
@@ -38,15 +38,15 @@ class AutoscalingGroup(Blueprint):
         'PrivateSubnets': {'type': EC2SubnetIdList,
                            'description': 'Subnets to deploy private '
                                           'instances in.',
-                           'default': ['10.100.1.0/24', '10.100.2.0/24']},
+                           'default': ['10.0.3.0/24', '10.0.2.0/24', '10.0.1.0/24']},
         'PublicSubnets': {'type': EC2SubnetIdList,
                           'description': 'Subnets to deploy public (elb) '
                                          'instances in.',
-                          'default': ['10.200.1.0/24', '10.200.2.0/24']},
+                          'default': ['10.0.101.0/24', '10.0.102.0/24']},
         'AvailabilityZones': {'type': CFNCommaDelimitedList,
                               'description': 'Availability Zones to deploy '
                                              'instances in.',
-                              'default': ['']},
+                              'default': ['us-west-1c', 'us-west-1b']},
         'InstanceType': {'type': CFNString,
                          'description': 'EC2 Instance Type',
                          'default': 't2.micro'},

@@ -2,13 +2,13 @@
 # http://stacker.readthedocs.io/en/latest/config.html
 # 
 
-namespace: ${namespace}
+namespace: ${dev}
 
 mappings:
   AmiMap:
-    us-east-1:
+    us-west-1:
       NAT: ami-ad227cc4
-      ubuntu1404: ami-74e27e1c
+      ubuntu1404:  ami-005c06c6de69aee84
       bastion: ami-74e27e1c
     us-west-2:
       NAT: ami-290f4119
@@ -34,6 +34,9 @@ stacks:
   # The 'class_path' points at a Python stacker "blueprint" class.
   - name: ASG
     class_path: blueprints.touch.AutoscalingGroup
+    region: us-west-1
+    variables:
+      ImageName: ubuntu1404
 
     # when we execute stacker with this `stack config`, it will automatically run the
     # blueprint code to produce a CloudFormation JSON template, upload it to s3, and
