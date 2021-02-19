@@ -17,7 +17,7 @@ mappings:
 
 # The bucket where stacker stores generated CloudFormation templates.
 # http://stacker.readthedocs.io/en/latest/config.html#s3-bucket
-stacker_bucket: firststack
+# stacker_bucket: firststack
 
 # This sets the syspath to include the local path, which allows access to the
 # blueprints in the blueprints directory.
@@ -34,18 +34,14 @@ stacks:
   # The 'class_path' points at a Python stacker "blueprint" class.
   - name: ASG
     class_path: blueprints.touch.AutoscalingGroup
-    region: us-west-1
     variables:
+      region: us-west-1
       ImageName: ubuntu1404
       SshKeyName: default
-      AvailabilityZones: 2
-      PublicSubnets:
-        - 10.0.101.0/24
-        - 10.0.102.0/24
-      PrivateSubnets:
-        - 10.0.1.0/24
-        - 10.0.2.0/24
-        - 10.0.3.0/24
+      AvailabilityZones: 3
+      PublicSubnets: subnet-0f480075f9dd6ffa1, subnet-02b1a2f20905e96e7
+      PrivateSubnets: subnet-02728d480029b49bb, subnet-0109d9906cd7aa2c8, subnet-0a226a5e1a53302db
+      ELBHostName: mysite
 
     # when we execute stacker with this `stack config`, it will automatically run the
     # blueprint code to produce a CloudFormation JSON template, upload it to s3, and

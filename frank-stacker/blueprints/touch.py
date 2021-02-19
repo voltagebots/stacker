@@ -35,10 +35,10 @@ class AutoscalingGroup(Blueprint):
             'type': CFNString,
             'default': '',
             'description': 'Base domain for the stack.'},
-        'PrivateSubnets': {'type': EC2SubnetIdList,
+        'PrivateSubnets': {"type": EC2SubnetIdList,
                            'description': 'Subnets to deploy private '
                                           'instances in.'},
-        'PublicSubnets': {'type': EC2SubnetIdList,
+        'PublicSubnets': {"type": EC2SubnetIdList,
                           'description': 'Subnets to deploy public (elb) '
                                          'instances in.'},
         'AvailabilityZones': {'type': CFNCommaDelimitedList,
