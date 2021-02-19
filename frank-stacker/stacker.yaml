@@ -38,10 +38,11 @@ stacks:
       region: us-west-1
       ImageName: ubuntu1404
       SshKeyName: default
-      AvailabilityZones: 3
-      PublicSubnets: subnet-0f480075f9dd6ffa1, subnet-02b1a2f20905e96e7
-      PrivateSubnets: subnet-02728d480029b49bb, subnet-0109d9906cd7aa2c8, subnet-0a226a5e1a53302db
+      AvailabilityZones: us-west-1a, us-west-1c
+      PublicSubnets: subnet-073dd933aae1acf25, subnet-0bfaec3388bfea323
+      PrivateSubnets: subnet-02f7783058f343dd1, subnet-08f8dcaf7c82e62f3
       ELBHostName: mysite
+      
 
     # when we execute stacker with this `stack config`, it will automatically run the
     # blueprint code to produce a CloudFormation JSON template, upload it to s3, and

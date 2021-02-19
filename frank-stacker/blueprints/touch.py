@@ -27,10 +27,10 @@ ELB_NAME = "%sDevELB"
 
 class AutoscalingGroup(Blueprint):
     VARIABLES = {
-        'VpcId': {'type': EC2VPCId, 'description': 'Vpc Id', 'default': "vpc-005de29611bb00830"},
+        'VpcId': {'type': EC2VPCId, 'description': 'Vpc Id', 'default': "vpc-010bd2d248051e0a8"},
         'DefaultSG': {'type': EC2SecurityGroupId,
                       'description': 'Top level security group.',
-                      'default': 'sg-0c70ce885e7ba5f3b'},
+                      'default': 'sg-02cdf78c7a6c3dbe3'},
         'BaseDomain': {
             'type': CFNString,
             'default': '',
@@ -200,7 +200,7 @@ class AutoscalingGroup(Blueprint):
 
     def get_autoscaling_group_parameters(self, launch_config_name, elb_name):
         return {
-            'AvailabilityZones': Ref("AvailabilityZones"),
+            # 'AvailabilityZones': Ref("AvailabilityZones"),
             'LaunchConfigurationName': Ref(launch_config_name),
             'MinSize': Ref("MinSize"),
             'MaxSize': Ref("MaxSize"),
